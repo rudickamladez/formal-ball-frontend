@@ -15,7 +15,7 @@
 			// },
 			// Add the IDs of extensions you want installed when the container is created.
 			"extensions": [
-				"eliostruyf.vscode-front-matter",
+				// "eliostruyf.vscode-front-matter",
 				"rusnasonov.vscode-hugo",
 				"budparr.language-hugo-vscode",
 				"eliostruyf.vscode-hugo-themer",
