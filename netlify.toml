@@ -1,4 +1,9 @@
 [[redirects]]
+  from = "/feedback"
+  to = "https://forms.gle/rcYhjEaWjtQUiHwF6"
+  status = 301
+
+[[redirects]]
 	from = "/en/*"
 	to = "/en/404/"
 	status = 404
