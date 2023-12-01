@@ -1,0 +1,39 @@
+{{ define "main" }}
+<main>
+    <section class="title">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Description }}</p>
+    </section>
+    <section class="content">
+        {{ .Content }}
+        {{ if isset .Params "people" }}
+        <div class="people">
+            <h2>{{ i18n "teamOfBall" }} </h2>
+            {{ range .Params.people }}
+            <div>
+                <div class="photo">
+                    <img src="{{ .photo }}" alt="Photo of {{ .name }}">
+                    {{/* {{.photo}}
+                    {{ with .Resources.Get .photo }}
+                    {{ .RelPerma }}
+                    <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="Photo">
+                    {{ end }} */}}
+                </div>
+                <h3 class="name">
+                    {{ .name }}
+                </h3>
+                <p class="description">
+                    {{ .description }}
+                </p>
+                <div class="mail">
+                    <a href="mailto:{{ .contact.email }}?cc=ples@rudickamladez.cz&subject=Ples">
+                        {{ i18n "writeEmail" }}
+                    </a>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+        {{ end }}
+    </section>
+</main>
+{{ end }}

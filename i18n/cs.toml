@@ -3,3 +3,9 @@ other = "Vstupenky"
 
 [program]
 other = "Program"
+
+[teamOfBall]
+other = "Tým našeho plesu"
+
+[writeEmail]
+other = "Napsat e-mail"
