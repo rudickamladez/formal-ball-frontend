@@ -3,6 +3,7 @@
 $base-color: #d6d6d6;
 $darker-color: #a1a1a1;
 $dark-color: #000;
+$serif-font: 'Gloock', serif;
 
 html,
 body {
@@ -21,7 +22,7 @@ body {
 }
 
 h1 {
-  font-family: 'Gloock', serif;
+  font-family: $serif-font;
   font-weight: 400;
 }
 
@@ -273,6 +274,35 @@ main {
       max-width: 77vw;
       text-align: justify;
       flex-grow: 1;
+    }
+
+    .program {
+      div {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "time title";
+        justify-items: stretch;
+        margin: 2cm 1vw;
+
+        span.time {
+          grid-area: time;
+          font-size: 1.25rem;
+          font-family: $serif-font;
+          font-weight: 600;
+          text-align: right;
+          padding: 0;
+          padding-right: 10px;
+          margin: auto 0;
+        }
+        
+        span.title {
+          grid-area: title;
+          font-size: 1.5rem;
+          text-align: left;
+          padding: 0;
+          margin: auto 0;
+        }
+      }
     }
   }
 }

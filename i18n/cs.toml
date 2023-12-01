@@ -1,2 +1,5 @@
 [tickets]
 other = "Vstupenky"
+
+[program]
+other = "Program"
