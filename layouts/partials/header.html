@@ -1,0 +1,23 @@
+<header id="header" class="{{ if not .IsHome }} header-inner {{ end }}">
+    <div>
+        <div>
+            {{/*  <a href="/"><img src="/favicon.ico" alt="Ples" height="48px"></a>  */}}
+            Ples
+        </div>
+        <nav>
+            <ul>
+                {{ $currentPage := . }}
+                {{ range .Site.Menus.main }}
+                {{ $active := "" }}
+                {{ if eq $currentPage.RelPermalink .URL }}
+                {{ $active = " active" }}
+                {{ end }}
+                <li>
+                    <a href="{{ .URL }}" class="nav-link{{ $active }}">{{ .Name }}</a>
+                </li>
+                {{ end }}
+            </ul>
+        </nav>
+        <a class="buy-tickets" href="/{{ .Lang }}/tickets">{{ i18n "tickets" }}</a>
+    </div>
+</header>

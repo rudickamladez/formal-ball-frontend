@@ -1,0 +1,81 @@
+<head>
+    <!-- encoding and browser config -->
+    <meta charset="UTF-8">
+    
+    <!-- responsive layout-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Add Hugo generator meta tag -->
+    {{ hugo.Generator }}
+    
+    <!-- Google Analytics -->
+    {{ template "_internal/google_analytics.html" . }}
+
+    <!-- SEO: basic -->
+    <title>
+        {{- if .IsHome }}
+        {{ .Site.Title }}
+        {{- else }}
+        {{ .Title }} &middot; {{ .Site.Title }}
+        {{- end }}
+    </title>
+    <meta name="description" content="{{ .Params.seo.description }}">
+    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="robots" content="{{ .Params.seo.robots }}">
+
+    <meta content="Ples, Rudice" name="keywords" />
+    <meta name="description" content="{{ .Description }}" />
+    {{ template "_internal/opengraph.html" . }}
+
+
+    <!-- SEO: twitter card -->
+    {{ if eq .Type "blog" }}
+    <meta name="twitter:card" content="summary_large_image">
+    {{ else }}
+    <meta name="twitter:card" content="summary">
+    {{ end }}
+    <meta name="twitter:title" content="{{ .Params.seo.title }}">
+    <meta name="twitter:description" content="{{ .Params.seo.description }}">
+    {{/*
+    <meta name="twitter:site" content="@project-name"> */}}
+    {{ if .Params.seo.image }}
+    <meta name="twitter:image" content="{{ .Site.Params.cloudinaryPrefix }}{{ .Params.seo.image }}">
+    {{ end }}
+
+    <!-- SEO: translations -->
+    {{ if .IsTranslated }}
+    {{ range .Translations }}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}" title="{{ .Language.LanguageName }}">
+    {{ end }}
+    {{ end }}
+
+    <!-- Favicons -->
+    {{/*  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">  */}}
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#d6d6d6">
+    <meta name="msapplication-TileColor" content="#d6d6d6">
+    <meta name="theme-color" content="#d6d6d6">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gloock&family=Golos+Text&display=swap"
+        rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    {{ $opts := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
+    {{ $style := resources.Get "css/style.scss" }}
+    {{ $style = $style | toCSS $opts | minify }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+    <!-- Template Main JS File -->
+    {{ $script := resources.Get "js/api.js" | minify }}
+    <script src="{{ $script.RelPermalink }}"></script>
+
+    <!-- Template Main JS File -->
+    {{ $script := resources.Get "js/js.cookie.js" | minify }}
+    <script src="{{ $script.RelPermalink }}"></script>
+</head>

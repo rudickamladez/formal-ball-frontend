@@ -1,0 +1,21 @@
+{{ define "main" }}
+<main id="hero">
+  <section class="title">
+    <h1 class="mb-4 pb-0">{{ .Params.hero.heading | safeHTML }}</h1>
+    <p class="mb-4 pb-0">{{ .Params.hero.subheading | safeHTML }}</p>
+    <a href="/{{ .Lang }}/tickets">{{ i18n "tickets" }}</a>
+  </section>
+  <section class="about">
+    <div class="date">
+      <h2>{{ .Params.about.when.day }}</h2>
+      <h2>{{ .Params.about.when.datetime }}</h2>
+    </div>
+    <div class="description">
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur bibendum justo non orci. Nunc dapibus
+        tortor vel mi dapibus sollicitudin. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Et harum quidem rerum facilis est
+        et expedita distinctio. </p>
+    </div>
+  </section>
+</main>
+{{ end }}

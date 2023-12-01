@@ -1,0 +1,26 @@
+baseURL = "https://ples.rudickamladez.cz"
+defaultContentLanguage = "cs"
+defaultContentLanguageInSubdir = true
+title = "Společenský ples Rudice"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+googleAnalytics = "G-B0F5ZFXFM7"
+[languages]
+  [languages.cs]
+    weight = 1
+    languageName = "Čeština"
+    languageCode = "cs"
+  [languages.en]
+    weight = 2
+    languageName = "English"
+    languageCode = "en"
+[params]
+    siteURL = "https://ples.rudickamladez.cz"
+    lang = "cs"
+    locale = "cs_CZ"
+    images = ["/img/ples22-pulnocko.webp"]
+    [taxonomies]
+        series = "series"
+[params.seo]
+    image = "/img/ples22-pulnocko.webp"
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files

@@ -1,0 +1,11 @@
+<!-- Template Main JS File -->
+{{ $script := resources.Get "js/main.js" | minify }}
+<script src="{{ $script.RelPermalink }}"></script>
+
+<footer id="footer">
+    <p>
+        &copy; Copyright
+        <a href="//lukasmatuska.cz/" target="_blank">Lukáš Matuška</a>
+        All Rights Reserved
+    </p>
+</footer>
