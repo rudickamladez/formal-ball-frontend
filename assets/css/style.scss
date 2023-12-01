@@ -31,6 +31,16 @@ a {
   border-bottom: 2px solid $dark-color;
 }
 
+main a,
+footer a {
+  transition: ease-in-out .2s;
+
+  &:hover {
+    color: $darker-color;
+    border-bottom: 3px solid $darker-color;
+  }
+}
+
 header {
   display: flex;
   align-items: center;
@@ -273,15 +283,5 @@ footer {
   p {
     padding: 10px;
     margin: 0px;
-
-    a {
-      text-decoration: none;
-      color: $dark-color;
-      transition: all ease-in-out .2s;
-
-      &:hover {
-        border-bottom: 0px solid $dark-color;
-      }
-    }
   }
 }
