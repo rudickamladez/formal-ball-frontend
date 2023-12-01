@@ -279,14 +279,18 @@ main {
     .program {
       div {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 4fr;
         grid-template-areas: "time title";
         justify-items: stretch;
-        margin: 2cm 1vw;
+        margin: 1.5vh 1vw;
+        font-size: 1.65rem;
+
+        @media screen and (max-width: 512px) {
+          font-size: 1.25rem;
+        }
 
         span.time {
           grid-area: time;
-          font-size: 1.25rem;
           font-family: $serif-font;
           font-weight: 600;
           text-align: right;
@@ -297,7 +301,6 @@ main {
         
         span.title {
           grid-area: title;
-          font-size: 1.5rem;
           text-align: left;
           padding: 0;
           margin: auto 0;
