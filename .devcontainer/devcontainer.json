@@ -22,7 +22,7 @@
 				"akmittal.hugofy",
 				"kaellarkin.hugo-shortcode-syntax",
 				// "prettier-plugin-go-template",
-
+				"PKief.material-icon-theme",
 				"bungcip.better-toml",
 				"davidanson.vscode-markdownlint"
 			]
