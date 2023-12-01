@@ -133,8 +133,8 @@ main {
 
     section {
       &.title {
-        height: 40vh;
-        // padding: 10px 0px;
+        min-height: 40vh;
+        padding-top: 10vh;
         text-align: center;
         margin: auto;
 
@@ -186,10 +186,10 @@ main {
       }
 
       &.about {
-        height: 33vh;
+        min-height: 33vh;
         width: 90vw;
         flex-grow: 1;
-        margin: auto;
+        margin: 5vh auto;
         display: grid;
         grid-template-columns: 1.5fr 2fr;
 
@@ -211,11 +211,11 @@ main {
 
           h2 {
             &:nth-child(1) {
-              font-size: 33px;
+              font-size: 44px;
               margin: 0px;
             }
 
-            font-size: 77px;
+            font-size: 66px;
             font-family: 'Gloock',
             serif;
             font-weight: 500;
