@@ -48,7 +48,8 @@
     hoursDOM = document.querySelector("section.countdown div.hours span.value");
     minutesDOM = document.querySelector("section.countdown div.minutes span.value");
     secondsDOM = document.querySelector("section.countdown div.seconds span.value");
-    setInterval(function () {
+
+    function updateCountdownValues(){
       nowDate = new Date().getTime();
       distance = ballDate - nowDate;
       daysDOM.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -56,8 +57,16 @@
       minutesDOM.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       secondsDOM.innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
       if(distance < 0){
+        // Hide countdown section
         countdownDOM.classList.add("hidden");
       }
+    }
+    // Update values on page init
+    updateCountdownValues()
+    
+    // Update values every one second
+    setInterval(function () {
+      updateCountdownValues()
     }, 1000)
   }
 </script>
