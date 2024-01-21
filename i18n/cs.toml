@@ -9,3 +9,19 @@ other = "Tým našeho plesu"
 
 [writeEmail]
 other = "Napsat e-mail"
+
+[days]
+one = "den"
+other = "dní"
+
+[hours]
+one = "hodina"
+other = "hodin"
+
+[minutes]
+one = "minuta"
+other = "minut"
+
+[seconds]
+one = "sekunda"
+other = "sekund"

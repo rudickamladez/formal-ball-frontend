@@ -276,6 +276,57 @@ main {
       }
     }
 
+    &.countdown {
+      display: grid;
+      margin: auto;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas:
+        "days hours minutes seconds"
+      ;
+
+      @media screen and (max-width: 900px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+          "days hours"
+          "minutes seconds"
+        ;
+      }
+
+      @media screen and (max-width: 450px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:
+          "days"
+          "hours"
+          "minutes"
+          "seconds"
+        ;
+      }
+
+      div {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 0.5fr;
+        margin: 10px;
+        font-family: 'Gloock', serif;
+        text-align: center;
+
+        .value {
+          color: white;
+          background: black;
+          font-size: 7.5rem;
+          padding: 5px 15px;
+        }
+
+        .units {
+          font-size: 3.5em;
+        }
+      }
+
+    }
+
     &.content {
       margin: auto;
       max-width: 77vw;

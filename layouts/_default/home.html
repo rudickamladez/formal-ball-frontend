@@ -6,6 +6,24 @@
     <a href="/{{ .Lang }}/tickets">{{ i18n "tickets" }}</a>
     <a href="/{{ .Lang }}/program">{{ i18n "program" }}</a>
   </section>
+  <section id="countdown" class="countdown">
+    <div class="days">
+      <span class="value">42</span>
+      <span class="units">{{ i18n "days" }}</span>
+    </div>
+    <div class="hours">
+      <span class="value">42</span>
+      <span class="units">{{ i18n "hours" }}</span>
+    </div>
+    <div class="minutes">
+      <span class="value">42</span>
+      <span class="units">{{ i18n "minutes" }}</span>
+    </div>
+    <div class="seconds">
+      <span class="value">42</span>
+      <span class="units">{{ i18n "seconds" }}</span>
+    </div>
+  </section>
   <section class="about">
     <div class="date">
       <h2>{{ .Params.about.when.day }}</h2>
@@ -19,4 +37,37 @@
     </div>
   </section>
 </main>
+<script>
+  window.onload = function () {
+    /**
+      Countdown
+    */
+    ballDate = new Date("2024/02/16 19:30").getTime()
+    countdownDOM = document.getElementById("countdown");
+    daysDOM = document.querySelector("section.countdown div.days span.value");
+    hoursDOM = document.querySelector("section.countdown div.hours span.value");
+    minutesDOM = document.querySelector("section.countdown div.minutes span.value");
+    secondsDOM = document.querySelector("section.countdown div.seconds span.value");
+
+    function updateCountdownValues(){
+      nowDate = new Date().getTime();
+      distance = ballDate - nowDate;
+      daysDOM.innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+      hoursDOM.innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      minutesDOM.innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      secondsDOM.innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+      if(distance < 0){
+        // Hide countdown section
+        countdownDOM.classList.add("hidden");
+      }
+    }
+    // Update values on page init
+    updateCountdownValues()
+    
+    // Update values every one second
+    setInterval(function () {
+      updateCountdownValues()
+    }, 1000)
+  }
+</script>
 {{ end }}
