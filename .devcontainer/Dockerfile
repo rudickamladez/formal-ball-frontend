@@ -17,4 +17,4 @@ WORKDIR /src
 
 EXPOSE 1313
 
-CMD ["/usr/bin/hugo", "server"]
+CMD ["/usr/bin/hugo", "server", "--disableFastRender"]
