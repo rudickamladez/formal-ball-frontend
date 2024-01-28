@@ -325,7 +325,7 @@ main {
 
       &>div {
         display: grid;
-        grid-template-rows: 30% 50% 20%;
+        grid-template-rows: 25% 50% 25%;
         grid-template-columns: 20% 80%;
         grid-template-areas:
           "photo name"
@@ -368,6 +368,8 @@ main {
           img {
             border-radius: 50%;
             border: 5px solid $dark-color;
+            max-width: 75%;
+            object-fit: cover;
           }
         }
 
@@ -376,6 +378,7 @@ main {
           font-family: $serif-font;
           font-weight: 500;
           font-size: 2rem;
+          margin-top: auto;
           margin-bottom: 0;
 
           @media screen and (max-width: 1000px) {
@@ -386,9 +389,14 @@ main {
         .description {
           grid-area: description;
           max-width: 66%;
+          margin: 0;
 
           @media screen and (max-width: 1000px) {
             max-width: 100%;
+          }
+
+          @media screen and (max-width: 600px) {
+            margin: 20px auto;
           }
         }
 
