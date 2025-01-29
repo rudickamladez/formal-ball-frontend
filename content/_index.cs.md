@@ -15,7 +15,7 @@ hero:
 about:
   when:
     day: 'Pátek'
-    datetime: '16. 2. 2024'
+    datetime: '21. 2. 2025'
 menu:
   main:
     name: Domů
